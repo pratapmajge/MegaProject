@@ -13,6 +13,8 @@ export class Service{
         this.bucket = new Storage(this.client);
     }
 
+    // below are the methods for crud operations in short and then for file handling
+
     async createPost({title , slug , content , featuredImage , status , userId}){
         try {
             return await this.databases.createDocument(
@@ -119,6 +121,13 @@ export class Service{
             console.log("Appwrite service :: deletefile :: error ", error);
             return false;
         }
+    }
+
+    getFilePreview(fileId){
+        return this.bucket.getFilePreview(
+            Conf.appwriteBucketId,
+            fileId
+        )
     }
 }
 
