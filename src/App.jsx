@@ -7,6 +7,7 @@ import AuthService from './appwrite/auth.js';
 import { login , logout } from './store/authSlice';
 import authservice from './appwrite/auth.js'
 import {Outlet} from 'react-router-dom'
+
 function App() {
 
   const [loading , setLoading]= useState(true);
